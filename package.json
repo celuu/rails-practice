@@ -2,8 +2,8 @@
   "name": "app",
   "private": true,
   "scripts": {
-    "build": "esbuild app/javascript/entrypoints/post_search.js --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
-    "build:watch": "esbuild app/javascript/entrypoints/post_search.js --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets --watch"
+    "build": "esbuild app/javascript/entrypoints/react_app.js --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets --loader:.js=jsx",
+    "build:watch": "esbuild app/javascript/entrypoints/react_app.js --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets --loader:.js=jsx --watch"
   },
   "dependencies": {
     "react": "^19.2.4",
