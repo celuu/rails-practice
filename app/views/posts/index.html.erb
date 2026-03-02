@@ -1,11 +1,13 @@
 <html>
-  <head><title>All Posts</title></head>
+  <head><title>Posts</title></head>
   <body>
 
-    <h1>Posts</h1>
-      <%= form_with model: Post.new do |f| %>
-        <%= f.text_field :title %>
-        <%= f.submit %>
+    <h1>All Posts</h1>
+    
+      <% @posts.each do |post| %>
+        <p class="post"><%= post.title %></p>
+        <%= link_to 'Edit', edit_post_path(post)  %>
+        <%= button_to 'Delete', post_path(post), method: :delete %>
       <% end %>
 
   </body>
