@@ -1,14 +1,5 @@
-<html>
-  <head><title>Posts</title></head>
-  <body>
+<h1>All Posts</h1>
 
-    <h1>All Posts</h1>
-    
-      <% @posts.each do |post| %>
-        <p class="post"><%= post.title %></p>
-        <%= link_to 'Edit', edit_post_path(post)  %>
-        <%= button_to 'Delete', post_path(post), method: :delete %>
-      <% end %>
+<%= link_to 'New Post', new_post_path %>
 
-  </body>
-</html>
+<%= tag.div id: "post-search", data: { posts: @posts.to_json } %>
