@@ -50,7 +50,8 @@ gem "bootsnap", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # Temporarily disabled: debug 1.7.0 has "missing keyword: :encoding" with IRB on Ruby 3.1
+  # gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
 group :development do
