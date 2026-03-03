@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 
 export const AuthorShow = ({ authors = [] }) => {
-  console.log(authors)
   return (
     <div className="author-list">
+      
       <ul>
       {authors.map((author) => (
         <li key={author.id}>
           <span>{author.name}</span>{" "}
+          <p>post body: {author.post.body}</p>
           <a href={`/authors/${author.id}/edit`}>Edit</a>{" "}
           <form
             action={`/authors/${author.id}`}

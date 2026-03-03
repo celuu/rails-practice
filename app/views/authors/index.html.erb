@@ -1,3 +1,4 @@
 <h1>Authors</h1>
+<%= link_to 'New Author', new_author_path  %>
 
 <%= tag.div id: "list-author", data: {authors: @authors.to_json(include: :post)}%>
