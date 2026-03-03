@@ -7,8 +7,7 @@ export function mountEditComment() {
   const el = document.getElementById("comment-form");
   if (el) {
     const comment = JSON.parse(el.dataset.comment || "[]");
-    const post = JSON.parse(el.dataset.post || "[]");
     const root = createRoot(el);
-    root.render(<CreateComment comment={comment} postId={post.id} />);
+    root.render(<CreateComment comment={comment} postId={comment.post_id} />);
   }
 }
