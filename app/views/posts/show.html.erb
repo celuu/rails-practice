@@ -1,12 +1,1 @@
-<html>
-  <head><title>Posts</title></head>
-  <body>
-
-    <h1>All Posts</h1>
-    
-      <% @posts.each do |post| %>
-        <p class="post"><%= post.title %></p>
-      <% end %>
-
-  </body>
-</html>
+<%= tag.div id: "show-post", data: {post: @post.to_json(include: :comments)}%>

@@ -24,14 +24,21 @@ export const PostSearch = ({ posts = [] }) => {
         <ul>
           {filteredPosts.map((post) => (
             <li key={post.id || post.title}>
-              <span>{post.title}</span>{" "}
+              <a href={`/posts/${post.id}`}>{post.title}</a>{" "}
               <a href={`/posts/${post.id}/edit`}>Edit</a>{" "}
-              <form action={`/posts/${post.id}`} method="post" style={{ display: "inline" }}>
+              <form
+                action={`/posts/${post.id}`}
+                method="post"
+                style={{ display: "inline" }}
+              >
                 <input type="hidden" name="_method" value="delete" />
                 <input
                   type="hidden"
                   name="authenticity_token"
-                  value={document.querySelector('meta[name="csrf-token"]')?.content || ""}
+                  value={
+                    document.querySelector('meta[name="csrf-token"]')
+                      ?.content || ""
+                  }
                 />
                 <button type="submit">Delete</button>
               </form>
